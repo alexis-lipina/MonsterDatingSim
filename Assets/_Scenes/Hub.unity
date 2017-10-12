@@ -507,9 +507,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCText: {fileID: 0}
+  SpeakerName: {fileID: 0}
+  ButtonAText: {fileID: 0}
+  ButtonBText: {fileID: 0}
+  ButtonCText: {fileID: 0}
   ButtonA: {fileID: 0}
   ButtonB: {fileID: 0}
   ButtonC: {fileID: 0}
+  NextButton: {fileID: 0}
   NPCObject: {fileID: 0}
   PressedButton: 0
 --- !u!114 &462646937
@@ -1255,7 +1260,7 @@ GameObject:
   - component: {fileID: 1431224646}
   - component: {fileID: 1431224645}
   m_Layer: 5
-  m_Name: AText
+  m_Name: NextText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1335,7 +1340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1627615816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1352,8 +1357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1442, y: -210.25}
-  m_SizeDelta: {x: 40.9, y: 39.6}
+  m_AnchoredPosition: {x: 1348.6, y: -152.09}
+  m_SizeDelta: {x: 49, y: 45.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1627615817
 MonoBehaviour:
@@ -2028,7 +2033,7 @@ MonoBehaviour:
   ButtonA: {fileID: 1396616145}
   ButtonB: {fileID: 1244967516}
   ButtonC: {fileID: 795324536}
-  scr: {fileID: 462646936}
+  handler: {fileID: 0}
 --- !u!1 &2001826090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,7 +2150,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

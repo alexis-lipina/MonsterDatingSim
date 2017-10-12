@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*  Dialogue Window Handler
+ *  Author - Mark Lipina
+ *  This class takes "input" from the NPCDialogueScript class and makes changes to the NPC Dialogue UI accordingly, including opening and closing it.
+ *  It also accepts user input and sends this input back to the NPCDialogueScript.
+ * */
+
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +15,14 @@ using UnityEngine.UI;
 public class DialogueWindowHandler : MonoBehaviour {
 
     public Text NPCText;
-    public Text ButtonA;
-    public Text ButtonB;
-    public Text ButtonC;
+    public Text SpeakerName;
+    public Text ButtonAText;
+    public Text ButtonBText;
+    public Text ButtonCText;
+    public Button ButtonA;
+    public Button ButtonB;
+    public Button ButtonC;
+    public Button NextButton;
     public GameObject NPCObject;
     public char PressedButton;
 
@@ -44,14 +56,89 @@ public class DialogueWindowHandler : MonoBehaviour {
     }
 
 
-    //Function called by NPC Dialogue Tree Handler script which modifies the displayed text
-    void ChangeText(string NPCTextString, string ButtonAString, string ButtonBString, string ButtonCString)
+
+    //===========================================================================| Methods for editing UI Elements
+    public void ChangeBodyText(string NPCTextString)
     {
+        // This method changes the main body text displayed in the dialogue window.
         NPCText.text = NPCTextString;
-        ButtonA.text = ButtonAString;
-        ButtonB.text = ButtonBString;
-        ButtonC.text = ButtonCString;
     }
+    public void ChangeButtonAText(string ButtonText)
+    {
+        // This method changes the text displayed by Button A
+        if (ButtonText.Equals(""))
+        {
+            ButtonA.enabled = false;
+        }
+        else
+        {
+            ButtonAText.text = ButtonText;
+            ButtonA.enabled = true;
+        }
+    }
+    public void ChangeButtonBText(string ButtonText)
+    {
+        // This method changes the text displayed by Button B
+        if (ButtonText.Equals(""))
+        {
+            ButtonB.enabled = false;
+        }
+        else
+        {
+            ButtonBText.text = ButtonText;
+            ButtonB.enabled = true;
+        }
+    }
+    public void ChangeButtonCText(string ButtonText)
+    {
+        // This method changes the text displayed by Button C
+        if (ButtonText.Equals(""))
+        {
+            ButtonC.enabled = false;
+        }
+        else
+        {
+            ButtonCText.text = ButtonText;
+            ButtonC.enabled = true;
+        }
+    }
+
+    public void enableButtonA()
+    {
+        ButtonA.enabled = true;
+    }
+    public void enableButtonB()
+    {
+        ButtonB.enabled = true;
+    }
+    public void enableButtonC()
+    {
+        ButtonC.enabled = true;
+    }
+    public void enableButtonNext()
+    {
+        NextButton.enabled = true;
+    }
+
+    public void disableButtonA()
+    {
+        ButtonA.enabled = false;
+    }
+    public void disableButtonB()
+    {
+        ButtonB.enabled = false;
+    }
+    public void disableButtonC()
+    {
+        ButtonC.enabled = false;
+    }
+    public void disableButtonNext()
+    {
+        NextButton.enabled = false;
+    }
+
+
+
 
 
 
