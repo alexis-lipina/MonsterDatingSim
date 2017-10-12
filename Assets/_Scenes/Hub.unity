@@ -506,16 +506,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06501ecf23e6f3f47bdf69cd72e7c5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPCText: {fileID: 0}
-  SpeakerName: {fileID: 0}
-  ButtonAText: {fileID: 0}
-  ButtonBText: {fileID: 0}
-  ButtonCText: {fileID: 0}
-  ButtonA: {fileID: 0}
-  ButtonB: {fileID: 0}
-  ButtonC: {fileID: 0}
-  NextButton: {fileID: 0}
-  NPCObject: {fileID: 0}
+  NPCText: {fileID: 969409894}
+  SpeakerName: {fileID: 1736622982}
+  ButtonAText: {fileID: 1396616145}
+  ButtonBText: {fileID: 1244967516}
+  ButtonCText: {fileID: 795324536}
+  ButtonA: {fileID: 1354845147}
+  ButtonB: {fileID: 178411642}
+  ButtonC: {fileID: 1888720604}
+  NextButton: {fileID: 1627615817}
+  NPCObject: {fileID: 1943620210}
   PressedButton: 0
 --- !u!114 &462646937
 MonoBehaviour:
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 969409895}
   - component: {fileID: 969409894}
   m_Layer: 5
-  m_Name: NPCText
+  m_Name: BodyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1046,7 +1046,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Welcome to the Capital(tm) (SUCCESS)
+  m_Text: Welcome to the Capital(tm) (v0.0.2)
 --- !u!222 &1248804518
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 1670192650}
   - component: {fileID: 1670192649}
   m_Layer: 5
-  m_Name: NPCTextPanel
+  m_Name: BodyTextPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1576,6 +1576,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1736622980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1736622981}
+  - component: {fileID: 1736622983}
+  - component: {fileID: 1736622982}
+  m_Layer: 5
+  m_Name: NameText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1736622981
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1736622980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1910222810}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -583, y: 111}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1736622982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1736622980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Speaker Name
+--- !u!222 &1736622983
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1736622980}
 --- !u!1 &1744976990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1929,7 @@ RectTransform:
   - {fileID: 1670192648}
   - {fileID: 529446282}
   - {fileID: 1627615816}
+  - {fileID: 1736622981}
   m_Father: {fileID: 462646935}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2033,7 +2108,7 @@ MonoBehaviour:
   ButtonA: {fileID: 1396616145}
   ButtonB: {fileID: 1244967516}
   ButtonC: {fileID: 795324536}
-  handler: {fileID: 0}
+  handler: {fileID: 462646936}
 --- !u!1 &2001826090
 GameObject:
   m_ObjectHideFlags: 0

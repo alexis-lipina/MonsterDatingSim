@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/** NPC Dialogue Script
+ *  Mark Lipina
+ * 
+ * 
+ * */
+
+
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,31 +55,34 @@ public class NPCDialogue : MonoBehaviour {
         {
             case "NormalChat":
                 //TODO : Enable A B and C, disable next, send body text, send name
-                handler.enableButtonA();
-                handler.enableButtonB();
-                handler.enableButtonC();
-                handler.disableButtonNext();
-                handler.ChangeBodyText(currentDialogueEvent.getBodyText());
+                handler.EnableButtonA();
+                handler.EnableButtonB();
+                handler.EnableButtonC();
+                handler.DisableButtonNext();
+                handler.SetBodyText(currentDialogueEvent.getBodyText());
+                handler.SetButtonAText(currentDialogueEvent.getButtonText('A'));
+                handler.SetButtonBText(currentDialogueEvent.getButtonText('B'));
+                handler.SetButtonCText(currentDialogueEvent.getButtonText('C'));
                 break;
             case "MonologueChat":
                 //TODO : Disable A B and C, enable Next, send body text, send name
-                handler.ChangeBodyText(currentDialogueEvent.getBodyText());
-                handler.disableButtonA();
-                handler.disableButtonB();
-                handler.disableButtonC();
-                handler.enableButtonNext();
+                handler.SetBodyText(currentDialogueEvent.getBodyText());
+                handler.DisableButtonA();
+                handler.DisableButtonB();
+                handler.DisableButtonC();
+                handler.EnableButtonNext();
                 break;
             case "ModifyChat":
                 //TODO : Disable A B and C, enable next, send body text, send name, make or send modification
-                handler.ChangeBodyText(currentDialogueEvent.getBodyText());
+                handler.SetBodyText(currentDialogueEvent.getBodyText());
                 break;
             case "GoodbyeChat":
                 //TODO : Disable A B and C, enable next, send body text, send name, close window after next - - - - - - !!!IDEA - Maybe replace GoodbyeChat with a MonologueChat that has no valid next event key???
-                handler.ChangeBodyText(currentDialogueEvent.getBodyText());
+                handler.SetBodyText(currentDialogueEvent.getBodyText());
                 break;
             case "VamonosChat":
                 //TODO : Disable A B and C, enable next, send body text, send name, 
-                handler.ChangeBodyText(currentDialogueEvent.getBodyText());
+                handler.SetBodyText(currentDialogueEvent.getBodyText());
                 break;
             
         }

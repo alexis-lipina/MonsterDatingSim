@@ -58,12 +58,12 @@ public class DialogueWindowHandler : MonoBehaviour {
 
 
     //===========================================================================| Methods for editing UI Elements
-    public void ChangeBodyText(string NPCTextString)
+    public void SetBodyText(string NPCTextString)
     {
         // This method changes the main body text displayed in the dialogue window.
         NPCText.text = NPCTextString;
     }
-    public void ChangeButtonAText(string ButtonText)
+    public void SetButtonAText(string ButtonText)
     {
         // This method changes the text displayed by Button A
         if (ButtonText.Equals(""))
@@ -76,7 +76,7 @@ public class DialogueWindowHandler : MonoBehaviour {
             ButtonA.enabled = true;
         }
     }
-    public void ChangeButtonBText(string ButtonText)
+    public void SetButtonBText(string ButtonText)
     {
         // This method changes the text displayed by Button B
         if (ButtonText.Equals(""))
@@ -89,7 +89,7 @@ public class DialogueWindowHandler : MonoBehaviour {
             ButtonB.enabled = true;
         }
     }
-    public void ChangeButtonCText(string ButtonText)
+    public void SetButtonCText(string ButtonText)
     {
         // This method changes the text displayed by Button C
         if (ButtonText.Equals(""))
@@ -103,38 +103,38 @@ public class DialogueWindowHandler : MonoBehaviour {
         }
     }
 
-    public void enableButtonA()
+    public void EnableButtonA()
     {
-        ButtonA.enabled = true;
+        ButtonA.gameObject.SetActive(true);
     }
-    public void enableButtonB()
+    public void EnableButtonB()
     {
-        ButtonB.enabled = true;
+        ButtonB.gameObject.SetActive(true);
     }
-    public void enableButtonC()
+    public void EnableButtonC()
     {
-        ButtonC.enabled = true;
+        ButtonC.gameObject.SetActive(true);
     }
-    public void enableButtonNext()
+    public void EnableButtonNext()
     {
-        NextButton.enabled = true;
+        NextButton.gameObject.SetActive(true);
     }
 
-    public void disableButtonA()
+    public void DisableButtonA()
     {
-        ButtonA.enabled = false;
+        ButtonA.gameObject.SetActive(false);
     }
-    public void disableButtonB()
+    public void DisableButtonB()
     {
-        ButtonB.enabled = false;
+        ButtonB.gameObject.SetActive(false);
     }
-    public void disableButtonC()
+    public void DisableButtonC()
     {
-        ButtonC.enabled = false;
+        ButtonC.gameObject.SetActive(false);
     }
-    public void disableButtonNext()
+    public void DisableButtonNext()
     {
-        NextButton.enabled = false;
+        NextButton.gameObject.SetActive(false);
     }
 
 
