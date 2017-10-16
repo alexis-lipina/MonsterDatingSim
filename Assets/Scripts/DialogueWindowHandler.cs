@@ -24,6 +24,7 @@ public class DialogueWindowHandler : MonoBehaviour {
     public Button ButtonC;
     public Button NextButton;
     public GameObject NPCObject;
+    public GameObject DialoguePanel;
     public char PressedButton;
 
 
@@ -31,10 +32,24 @@ public class DialogueWindowHandler : MonoBehaviour {
     public void openDialogue()
     {
         transform.SetAsLastSibling();
+        DialoguePanel.SetActive(true);
+        NPCObject.SetActive(false);
+        GameObject[] interactibles = GameObject.FindGameObjectsWithTag("Interactible");
+        for (int i = 0; i < interactibles.Length; i++)
+        {
+            interactibles[i].gameObject.SetActive(false);
+        }
     }
     public void closeDialogue()
     {
         transform.SetAsFirstSibling();
+        DialoguePanel.SetActive(false);
+        NPCObject.SetActive(true);
+        GameObject[] interactibles = GameObject.FindGameObjectsWithTag("Interactible");
+        for (int i = 0; i < interactibles.Length; i++)
+        {
+            interactibles[i].gameObject.SetActive(true);
+        }
     }
 
     //Button press listeners

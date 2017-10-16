@@ -41,6 +41,10 @@ public class NPCDialogue : MonoBehaviour {
             printDialogue();
             handler.openDialogue();
         }
+        else
+        {
+            print("ERROR: 'start' not in dialogue data structure!");
+        }
         
     }
 
