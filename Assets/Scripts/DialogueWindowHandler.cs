@@ -1,7 +1,8 @@
-﻿/*  Dialogue Window Handler
+﻿/**  Dialogue Window Handler
  *  Author - Mark Lipina
- *  This class takes "input" from the NPCDialogueScript class and makes changes to the NPC Dialogue UI accordingly, including opening and closing it.
- *  It also accepts user input and sends this input back to the NPCDialogueScript.
+ *  This class provides methods to the NPCDialogue class which change the different elements of the NPC Dialogue UI,
+ *  as well providing control over opening and closing it. It also accepts user input via buttons and sends this input 
+ *  back to the NPCDialogueScript to allow procession through dialogue.
  * */
 
 
@@ -24,15 +25,18 @@ public class DialogueWindowHandler : MonoBehaviour {
     public Button ButtonC;
     public Button NextButton;
     public GameObject NPCObject;
+    public NPCDialogue NPCScript;
     public GameObject DialoguePanel;
     public char PressedButton;
 
 
     //Open and close dialogue
-    public void openDialogue()
+    public void openDialogue(string npcobj)
     {
         transform.SetAsLastSibling();
         DialoguePanel.SetActive(true);
+        NPCObject = GameObject.Find(npcobj);
+        NPCScript = NPCObject.GetComponent<NPCDialogue>();
         NPCObject.SetActive(false);
         GameObject[] interactibles = GameObject.FindGameObjectsWithTag("Interactible");
         for (int i = 0; i < interactibles.Length; i++)
@@ -40,6 +44,7 @@ public class DialogueWindowHandler : MonoBehaviour {
             interactibles[i].gameObject.SetActive(false);
         }
     }
+
     public void closeDialogue()
     {
         transform.SetAsFirstSibling();
@@ -50,6 +55,9 @@ public class DialogueWindowHandler : MonoBehaviour {
         {
             interactibles[i].gameObject.SetActive(true);
         }
+        NPCObject.SetActive(true);
+        NPCObject = null;
+        NPCScript = null;
     }
 
     //Button press listeners
@@ -164,18 +172,22 @@ public class DialogueWindowHandler : MonoBehaviour {
         {
             case 'A':
                 Debug.Log("Button A pressed");
+                NPCScript.changeDialogueEvent(PressedButton);
                 PressedButton = ' ';
                 break;
             case 'B':
                 Debug.Log("Button B pressed");
+                NPCScript.changeDialogueEvent(PressedButton);
                 PressedButton = ' ';
                 break;
             case 'C':
                 Debug.Log("Button C pressed");
+                NPCScript.changeDialogueEvent(PressedButton);
                 PressedButton = ' ';
                 break;
             case 'N':
                 Debug.Log("Next Button Pressed");
+                NPCScript.changeDialogueEvent(PressedButton);
                 PressedButton = ' ';
                 break;
 

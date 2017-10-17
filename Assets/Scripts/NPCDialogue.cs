@@ -1,7 +1,10 @@
 ﻿/** NPC Dialogue Script
  *  Mark Lipina
- * 
- * 
+ *  This class serves to read in dialogue event objects from a JSON file specific to 
+ *  a given NPC, and stores it locally. It provides methods for the DialogueWindowHandler 
+ *  to proceed along the dialogue structure based on given inputs, and calls upon methods
+ *  in the DialogueWindowHandler to modify the text displayed based on the current 
+ *  DialogueObject. 
  * */
 
 
@@ -36,10 +39,9 @@ public class NPCDialogue : MonoBehaviour {
     { 
         if (npcDialogue.ContainsKey("start"))
         {
-            
             currentDialogueEvent = npcDialogue["start"];
             printDialogue();
-            handler.openDialogue();
+            handler.openDialogue("TestNPC");
         }
         else
         {
@@ -50,6 +52,9 @@ public class NPCDialogue : MonoBehaviour {
 
     public void printDialogue()
     {
+        /*  This method sends display data to the DialogueWindowHandler whenever there is a change in dialogue.
+         * */
+
         //DEBUG
         print("Printing object type...");
         print(currentDialogueEvent.GetType().ToString());
@@ -82,16 +87,34 @@ public class NPCDialogue : MonoBehaviour {
                 break;
             case "GoodbyeChat":
                 //TODO : Disable A B and C, enable next, send body text, send name, close window after next - - - - - - !!!IDEA - Maybe replace GoodbyeChat with a MonologueChat that has no valid next event key???
+                handler.DisableButtonA();
+                handler.DisableButtonB();
+                handler.DisableButtonC();
+                handler.EnableButtonNext();
                 handler.SetBodyText(currentDialogueEvent.getBodyText());
                 break;
             case "VamonosChat":
                 //TODO : Disable A B and C, enable next, send body text, send name, 
                 handler.SetBodyText(currentDialogueEvent.getBodyText());
                 break;
-            
         }
     }
 
+
+    public void changeDialogueEvent(char buttonpressed)
+    {
+        if (currentDialogueEvent.GetType().ToString() == "GoodbyeChat")
+        {
+            handler.closeDialogue();
+        }
+        else
+        {
+            print("Button " + buttonpressed + "pressed");
+            currentDialogueEvent = npcDialogue[currentDialogueEvent.getButtonEvent(buttonpressed)];
+            printDialogue();
+        }
+        
+    }
 
 
 

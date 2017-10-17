@@ -170,10 +170,10 @@ RectTransform:
   m_Father: {fileID: 529446282}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 885.05005, y: -29.971573}
+  m_SizeDelta: {x: 584.7, y: 59.943146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &178411642
 MonoBehaviour:
@@ -402,7 +402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &462646935
 RectTransform:
   m_ObjectHideFlags: 0
@@ -444,6 +444,7 @@ MonoBehaviour:
   ButtonC: {fileID: 1888720604}
   NextButton: {fileID: 1627615817}
   NPCObject: {fileID: 772279808}
+  NPCScript: {fileID: 0}
   DialoguePanel: {fileID: 462646934}
   PressedButton: 0
 --- !u!114 &462646937
@@ -623,7 +624,6 @@ GameObject:
   - component: {fileID: 772279811}
   - component: {fileID: 772279812}
   - component: {fileID: 772279809}
-  - component: {fileID: 772279813}
   m_Layer: 0
   m_Name: InteractOnClickScript
   m_TagString: Interactible
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e857ee219fad2641baa9fd922ee8143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testobj: {fileID: 772279813}
+  testobj: {fileID: 1154945613}
 --- !u!4 &772279811
 Transform:
   m_ObjectHideFlags: 0
@@ -681,22 +681,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.5, y: 30.000002}
   m_EdgeRadius: 0
---- !u!114 &772279813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 772279808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a12988d12efd324ab85deffdbb29f65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextBox: {fileID: 969409894}
-  ButtonA: {fileID: 1396616145}
-  ButtonB: {fileID: 1244967516}
-  ButtonC: {fileID: 795324536}
-  handler: {fileID: 462646936}
 --- !u!1 &795324534
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +910,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1154945612}
+  - component: {fileID: 1154945613}
   m_Layer: 0
   m_Name: TestNPC
   m_TagString: Untagged
@@ -948,6 +933,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1154945613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1154945611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a12988d12efd324ab85deffdbb29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextBox: {fileID: 969409894}
+  ButtonA: {fileID: 1396616145}
+  ButtonB: {fileID: 1244967516}
+  ButtonC: {fileID: 795324536}
+  handler: {fileID: 462646936}
 --- !u!1 &1244967514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,10 +1200,10 @@ RectTransform:
   m_Father: {fileID: 529446282}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 292.35, y: -29.971573}
+  m_SizeDelta: {x: 584.7, y: 59.943146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1354845147
 MonoBehaviour:
@@ -2101,10 +2102,10 @@ RectTransform:
   m_Father: {fileID: 529446282}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1477.75, y: -29.971573}
+  m_SizeDelta: {x: 584.7, y: 59.943146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1888720604
 MonoBehaviour:
