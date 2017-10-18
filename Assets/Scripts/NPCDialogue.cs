@@ -27,11 +27,23 @@ public class NPCDialogue : MonoBehaviour {
 
     void Start()
     {
+        // TODO : Read dialogueObjects from JSON
+        /*
         npcDialogue.Add("start", new NormalChat("Hi! I'm some NPC. How are you?", "Some NPC", 0, 3, new string[] { "Good, you?", "What's your name?", "Goodbye." }, new string[] { "a", "b", "exit" }));
         npcDialogue.Add("a", new NormalChat("Good, thanks!", "Some NPC", 0, 3, new string[] {"Oh... uh, Goodbye.", "Toodle-oo", "See ya." }, new string[] { "exit", "exit", "exit" }));
         npcDialogue.Add("b", new NormalChat("I just told you, I'm Some NPC", "Some NPC", 0, 3, new string[] { "Oh. Ok, bye.", "Bye, Felicia.", "Goodbye." }, new string[] { "exit", "exit", "exit" }));
         npcDialogue.Add("exit", new GoodbyeChat("Okay, see you later!", "Some NPC", 0));
-        // TODO : Read dialogue from JSON or other data file
+        */
+
+        npcDialogue.Add("start", new NormalChat("Hi! I'm some NPC. How are you?", "Some NPC", 0, 3, new string[] { "I'm alright.", "Good, thanks.", "Get out of my face." }, new string[] { "a", "a", "badexit" }));
+        npcDialogue.Add("a", new MonologueChat("That's good to hear!", "Some NPC", 0, "b"));
+        npcDialogue.Add("b", new NormalChat("What can I do for you?", "Some NPC", 0, 3, new string[] { "You're pretty cute.", "What is this place?", "I should go."}, new string[] {"c", "d", "goodexit" }));
+        npcDialogue.Add("c", new MonologueChat("Uh, thanks, but we just met. Ease off on the afterburners, buddy.", "Some NPC", 0, "b"));
+        npcDialogue.Add("d", new MonologueChat("This is the Galacticapital™, the center of commerce, trade and politics between the civilizations within our galaxy!", "Some NPC", 0, "e"));
+        npcDialogue.Add("e", new MonologueChat("Here, you can find portals to some planets you'll hopefully see in more detail once this game is more developed. Feel free to pay them a visit, public transit is free in the Future!", "Some NPC", 0, "b"));
+        npcDialogue.Add("goodexit", new GoodbyeChat("Alright, good to meet you, have a pleasant stay!", "Some NPC", 0));
+        npcDialogue.Add("badexit", new GoodbyeChat("Wow, I hope the rest of your species isn't as rude as you. Dont expect any help from me, buddy.", "Some NPC", 0));
+
     }
 
 
@@ -72,6 +84,7 @@ public class NPCDialogue : MonoBehaviour {
                 handler.SetButtonAText(currentDialogueEvent.getButtonText('A'));
                 handler.SetButtonBText(currentDialogueEvent.getButtonText('B'));
                 handler.SetButtonCText(currentDialogueEvent.getButtonText('C'));
+                handler.SetSpeakerText(currentDialogueEvent.getName());
                 break;
             case "MonologueChat":
                 //TODO : Disable A B and C, enable Next, send body text, send name
@@ -80,10 +93,12 @@ public class NPCDialogue : MonoBehaviour {
                 handler.DisableButtonB();
                 handler.DisableButtonC();
                 handler.EnableButtonNext();
+                handler.SetSpeakerText(currentDialogueEvent.getName());
                 break;
             case "ModifyChat":
                 //TODO : Disable A B and C, enable next, send body text, send name, make or send modification
                 handler.SetBodyText(currentDialogueEvent.getBodyText());
+                handler.SetSpeakerText(currentDialogueEvent.getName());
                 break;
             case "GoodbyeChat":
                 //TODO : Disable A B and C, enable next, send body text, send name, close window after next - - - - - - !!!IDEA - Maybe replace GoodbyeChat with a MonologueChat that has no valid next event key???
@@ -92,10 +107,12 @@ public class NPCDialogue : MonoBehaviour {
                 handler.DisableButtonC();
                 handler.EnableButtonNext();
                 handler.SetBodyText(currentDialogueEvent.getBodyText());
+                handler.SetSpeakerText(currentDialogueEvent.getName());
                 break;
             case "VamonosChat":
                 //TODO : Disable A B and C, enable next, send body text, send name, 
                 handler.SetBodyText(currentDialogueEvent.getBodyText());
+                handler.SetSpeakerText(currentDialogueEvent.getName());
                 break;
         }
     }

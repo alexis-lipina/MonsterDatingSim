@@ -41,8 +41,15 @@ public class MonologueChat : DialogueEvent {
     }
     public override string getButtonEvent(char btn)
     {
-        Debug.LogError("ERROR: getButtonEvent called on MonologueChat");
-        return "";
+        if (btn.Equals('n') || btn.Equals('N'))
+        {
+            return nextEvent;
+        }
+        else
+        {
+            Debug.LogError("ERROR: getButtonEvent called on MonologueChat");
+            return "";
+        }
     }
     public override int getTrustChange() //==============={ LEFT OFF WORK HERE }
     {

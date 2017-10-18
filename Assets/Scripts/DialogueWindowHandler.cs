@@ -28,17 +28,21 @@ public class DialogueWindowHandler : MonoBehaviour {
     public NPCDialogue NPCScript;
     public GameObject DialoguePanel;
     public char PressedButton;
+    private GameObject[] interactibles;
+    private string BodyText;
+    private bool ready;
+    private int BodyIndex;
 
 
     //Open and close dialogue
     public void openDialogue(string npcobj)
     {
-        transform.SetAsLastSibling();
+        BodyIndex = 0;
         DialoguePanel.SetActive(true);
         NPCObject = GameObject.Find(npcobj);
         NPCScript = NPCObject.GetComponent<NPCDialogue>();
         NPCObject.SetActive(false);
-        GameObject[] interactibles = GameObject.FindGameObjectsWithTag("Interactible");
+        interactibles = GameObject.FindGameObjectsWithTag("Interactible");
         for (int i = 0; i < interactibles.Length; i++)
         {
             interactibles[i].gameObject.SetActive(false);
@@ -47,10 +51,8 @@ public class DialogueWindowHandler : MonoBehaviour {
 
     public void closeDialogue()
     {
-        transform.SetAsFirstSibling();
         DialoguePanel.SetActive(false);
         NPCObject.SetActive(true);
-        GameObject[] interactibles = GameObject.FindGameObjectsWithTag("Interactible");
         for (int i = 0; i < interactibles.Length; i++)
         {
             interactibles[i].gameObject.SetActive(true);
@@ -60,7 +62,7 @@ public class DialogueWindowHandler : MonoBehaviour {
         NPCScript = null;
     }
 
-    //Button press listeners
+    //===========================================================================| Button press listeners
     public void ButtonAPressed()
     {
         PressedButton = 'A';
@@ -83,8 +85,10 @@ public class DialogueWindowHandler : MonoBehaviour {
     //===========================================================================| Methods for editing UI Elements
     public void SetBodyText(string NPCTextString)
     {
-        // This method changes the main body text displayed in the dialogue window.
-        NPCText.text = NPCTextString;
+        /// This method changes the main body text displayed in the dialogue window.
+        BodyText = NPCTextString;
+        ready = false;
+        BodyIndex = 0;
     }
     public void SetButtonAText(string ButtonText)
     {
@@ -125,6 +129,10 @@ public class DialogueWindowHandler : MonoBehaviour {
             ButtonC.enabled = true;
         }
     }
+    public void SetSpeakerText(string text)
+    {
+        SpeakerName.text = text;
+    }
 
     public void EnableButtonA()
     {
@@ -162,37 +170,47 @@ public class DialogueWindowHandler : MonoBehaviour {
 
 
 
-
-
-
     void Update()
     {
-        //Switch statement sends choice to NPC-specific script which proceeds along the dialog tree
-        switch (PressedButton)
+        if (!ready)
         {
-            case 'A':
-                Debug.Log("Button A pressed");
-                NPCScript.changeDialogueEvent(PressedButton);
-                PressedButton = ' ';
-                break;
-            case 'B':
-                Debug.Log("Button B pressed");
-                NPCScript.changeDialogueEvent(PressedButton);
-                PressedButton = ' ';
-                break;
-            case 'C':
-                Debug.Log("Button C pressed");
-                NPCScript.changeDialogueEvent(PressedButton);
-                PressedButton = ' ';
-                break;
-            case 'N':
-                Debug.Log("Next Button Pressed");
-                NPCScript.changeDialogueEvent(PressedButton);
-                PressedButton = ' ';
-                break;
+            //scroll text
+            NPCText.text = BodyText.Substring(0, BodyIndex);
+            if (BodyIndex != BodyText.Length)
+            { BodyIndex++; }
+            else
+            { ready = true; }
+            
+        }
+        else
+        {
+            //Switch statement sends choice to NPC-specific script which proceeds along the dialog tree
+            switch (PressedButton)
+            {
+                case 'A':
+                    Debug.Log("Button A pressed");
+                    NPCScript.changeDialogueEvent(PressedButton);
+                    PressedButton = ' ';
+                    break;
+                case 'B':
+                    Debug.Log("Button B pressed");
+                    NPCScript.changeDialogueEvent(PressedButton);
+                    PressedButton = ' ';
+                    break;
+                case 'C':
+                    Debug.Log("Button C pressed");
+                    NPCScript.changeDialogueEvent(PressedButton);
+                    PressedButton = ' ';
+                    break;
+                case 'N':
+                    Debug.Log("Next Button Pressed");
+                    NPCScript.changeDialogueEvent(PressedButton);
+                    PressedButton = ' ';
+                    break;
 
-            default:
-                break;
-        }    
+                default:
+                    break;
+            }
+        }
     }
 }
