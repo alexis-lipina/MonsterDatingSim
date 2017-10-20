@@ -5,12 +5,11 @@ using UnityEngine;
 public class PortalScript : MonoBehaviour {
 
     public string DestinationScene;
-    public LevelManager LevMan;
 
     void OnMouseDown()
     {
         print("Portal clicked!");
-        LevMan.ChangeScene(DestinationScene);
+        LevelManager.ChangeScene(DestinationScene);
     }
 
 

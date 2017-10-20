@@ -51,7 +51,7 @@ public class MonologueChat : DialogueEvent {
             return "";
         }
     }
-    public override int getTrustChange() //==============={ LEFT OFF WORK HERE }
+    public override int getTrustChange() 
     {
         Debug.LogError("ERROR: getTrustChange called on MonologueChat - method only implemented in ModifyChat");
         return 0;
