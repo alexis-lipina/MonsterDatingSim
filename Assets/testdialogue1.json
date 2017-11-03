@@ -1,8 +1,33 @@
+{
 
-	{
-		"dialoguetype" : "GoodbyeChat",
-		"eventkey" : "start",
-		"speakername" : "YEET",
-		"bodytext" : "If you can read this, the JSON has successfully been loaded in! Congrats!",
-		"spriteindex" : 0
-	}
+	"nodes" : [
+
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "start",
+			"speakername" : "YEET",
+			"bodytext" : "If you can read this, the JSON has successfully been loaded in! Congrats!",
+			"spriteindex" : 0,
+			"nextkey" : "middle"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "middle",
+			"speakername" : "YEET",
+			"bodytext" : "Whatchu wanna do now B?",
+			"spriteindex" : 0,
+			"buttoncount" : 3,
+			"buttontext" : ["what?", "uhhh", "I wanna leave fam"],
+			"buttonevent" : [ "middle" , "exit", "exit"]
+		},
+		{
+			"dialoguetype" : "GoodbyeChat",
+			"eventkey" : "exit",
+			"speakername" : "YEET",
+			"bodytext" : "Peace boiiiiiiiiiiiiiiiii",
+			"spriteindex" : 0
+		}
+
+
+	]
+}

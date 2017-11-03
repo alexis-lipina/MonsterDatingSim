@@ -15,7 +15,6 @@ using UnityEngine;
 [Serializable]
 public class JSONDialogue
 {
-
     public string bodytext;
     public int buttoncount;
     public int spriteindex;
@@ -28,7 +27,14 @@ public class JSONDialogue
     public string[] buttonevent;
     public string dialoguetype;
 
-
     public JSONDialogue() { }
 
+    /// <summary>
+    /// Constructs a DialogueEvent object out of the data within the JSONDialogue object this method is being called on
+    /// </summary>
+    /// <returns>Corresponding dialogue event</returns>
+    public DialogueEvent toDialogueEvent()
+    {
+        return null;
+    }
 }

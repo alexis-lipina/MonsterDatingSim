@@ -65,20 +65,25 @@ public class NPCDialogue : MonoBehaviour {
         {
             switch (tempevents[i].dialoguetype)
             {
-                case "GoodbyeChat":
+                case "GoodbyeChat":                   
                     npcDialogue.Add(tempevents[i].eventkey, new GoodbyeChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex));
+                    Debug.Log("GoodbyeChat created.");
                     break;
                 case "ModifyChat":
                     npcDialogue.Add(tempevents[i].eventkey, new ModifyChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex, tempevents[i].trustchange, tempevents[i].nextkey));
+                    Debug.Log("ModifyChat created.");
                     break;
                 case "MonologueChat":
                     npcDialogue.Add(tempevents[i].eventkey, new MonologueChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex, tempevents[i].nextkey));
+                    Debug.Log("MonologueChat created.");
                     break;
                 case "NormalChat":
                     npcDialogue.Add(tempevents[i].eventkey, new NormalChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex, tempevents[i].buttoncount, tempevents[i].buttontext, tempevents[i].buttonevent));
+                    Debug.Log("NormalChat created.");
                     break;
                 case "VamonosChat":
                     npcDialogue.Add(tempevents[i].eventkey, new VamonosChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex, tempevents[i].destination));
+                    Debug.Log("VamonosChat created.");
                     break;
                 default:
                     Debug.Log("ERROR: Invalid dialoguetype in json file " + filename + ", at index " + i);
@@ -168,7 +173,7 @@ public class NPCDialogue : MonoBehaviour {
         }
         else
         {
-            print("Button " + buttonpressed + "pressed");
+            print("Button " + buttonpressed + " pressed");
             currentDialogueEvent = npcDialogue[currentDialogueEvent.getButtonEvent(buttonpressed)];
             printDialogue();
         }

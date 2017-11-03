@@ -6,8 +6,8 @@ using UnityEngine;
 /// This class defines a JSON-Serializeable collection for storing and 
 /// reading in arrays of JSONDialogue objects.
 /// </summary>
-
-public class JSONDialogueCollection : MonoBehaviour {
+[Serializable]
+public class JSONDialogueCollection {
     public JSONDialogue[] nodes;
 	
 }
