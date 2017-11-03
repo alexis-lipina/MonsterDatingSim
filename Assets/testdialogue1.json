@@ -1,0 +1,8 @@
+
+	{
+		"dialoguetype" : "GoodbyeChat",
+		"eventkey" : "start",
+		"speakername" : "YEET",
+		"bodytext" : "If you can read this, the JSON has successfully been loaded in! Congrats!",
+		"spriteindex" : 0
+	}

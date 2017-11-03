@@ -1,0 +1,11 @@
+[
+	{
+		"type" : "NormalChat",
+		"step" : "start",
+		"name" : "YEET",
+		"bodytext" : "If you can read this, the JSON has successfully been loaded in! Congrats!",
+		"sprindex" : 0
+
+	}
+
+]

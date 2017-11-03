@@ -12,8 +12,10 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class NPCDialogue : MonoBehaviour {
 
@@ -25,6 +27,7 @@ public class NPCDialogue : MonoBehaviour {
     Dictionary<string, DialogueEvent> npcDialogue = new Dictionary<string, DialogueEvent>();
     DialogueEvent currentDialogueEvent;
 
+
     void Start()
     {
         // TODO : Read dialogueObjects from JSON
@@ -35,16 +38,56 @@ public class NPCDialogue : MonoBehaviour {
         npcDialogue.Add("exit", new GoodbyeChat("Okay, see you later!", "Some NPC", 0));
         */
 
-        npcDialogue.Add("start", new NormalChat("Hi! I'm some NPC. How are you?", "Some NPC", 0, 3, new string[] { "I'm alright.", "Good, thanks.", "Get out of my face." }, new string[] { "a", "a", "badexit" }));
-        npcDialogue.Add("a", new MonologueChat("That's good to hear!", "Some NPC", 0, "b"));
-        npcDialogue.Add("b", new NormalChat("What can I do for you?", "Some NPC", 0, 3, new string[] { "You're pretty cute.", "What is this place?", "I should go."}, new string[] {"c", "d", "goodexit" }));
-        npcDialogue.Add("c", new MonologueChat("Uh, thanks, but we just met. Ease off on the afterburners, buddy.", "Some NPC", 0, "b"));
-        npcDialogue.Add("d", new MonologueChat("This is the Galacticapital™, the center of commerce, trade and politics between the civilizations within our galaxy!", "Some NPC", 0, "e"));
-        npcDialogue.Add("e", new MonologueChat("Here, you can find portals to some planets you'll hopefully see in more detail once this game is more developed. Feel free to pay them a visit, public transit is free in the Future!", "Some NPC", 0, "b"));
-        npcDialogue.Add("goodexit", new GoodbyeChat("Alright, good to meet you, have a pleasant stay!", "Some NPC", 0));
-        npcDialogue.Add("badexit", new GoodbyeChat("Wow, I hope the rest of your species isn't as rude as you. Dont expect any help from me, buddy.", "Some NPC", 0));
+        // Hardcoded file reading
 
+        //npcDialogue.Add("start", new NormalChat("Hi! I'm some NPC. How are you?", "Some NPC", 0, 3, new string[] { "I'm alright.", "Good, thanks.", "Get out of my face." }, new string[] { "a", "a", "badexit" }));
+        //npcDialogue.Add("a", new MonologueChat("That's good to hear!", "Some NPC", 0, "b"));
+        //npcDialogue.Add("b", new NormalChat("What can I do for you?", "Some NPC", 0, 3, new string[] { "You're pretty cute.", "What is this place?", "I should go." }, new string[] { "c", "d", "goodexit" }));
+        //npcDialogue.Add("c", new MonologueChat("Uh, thanks, but we just met. Ease off on the afterburners, buddy.", "Some NPC", 0, "b"));
+        //npcDialogue.Add("d", new MonologueChat("This is the Galacticapital™, the center of commerce, trade and politics between the civilizations within our galaxy!", "Some NPC", 0, "e"));
+        //npcDialogue.Add("e", new MonologueChat("Here, you can find portals to some planets you'll hopefully see in more detail once this game is more developed. Feel free to pay them a visit, public transit is free in the Future!", "Some NPC", 0, "b"));
+        //npcDialogue.Add("goodexit", new GoodbyeChat("Alright, good to meet you, have a pleasant stay!", "Some NPC", 0));
+        //npcDialogue.Add("badexit", new GoodbyeChat("Wow, I hope the rest of your species isn't as rude as you. Dont expect any help from me, buddy.", "Some NPC", 0));
+
+
+        loadDialogueFromJSON("testdialogue1.json");
     }
+
+  
+    private void loadDialogueFromJSON(string filename)
+    {
+        StreamReader filestream = new StreamReader(Application.dataPath + "/" + filename);
+        JSONDialogueCollection dialoguearray = JsonUtility.FromJson<JSONDialogueCollection>(filestream.ReadToEnd());
+        filestream.Close();
+
+        JSONDialogue[] tempevents = dialoguearray.nodes;
+        for (int i = 0; i < tempevents.Length; i++)
+        {
+            switch (tempevents[i].dialoguetype)
+            {
+                case "GoodbyeChat":
+                    npcDialogue.Add(tempevents[i].eventkey, new GoodbyeChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex));
+                    break;
+                case "ModifyChat":
+                    npcDialogue.Add(tempevents[i].eventkey, new ModifyChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex, tempevents[i].trustchange, tempevents[i].nextkey));
+                    break;
+                case "MonologueChat":
+                    npcDialogue.Add(tempevents[i].eventkey, new MonologueChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex, tempevents[i].nextkey));
+                    break;
+                case "NormalChat":
+                    npcDialogue.Add(tempevents[i].eventkey, new NormalChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex, tempevents[i].buttoncount, tempevents[i].buttontext, tempevents[i].buttonevent));
+                    break;
+                case "VamonosChat":
+                    npcDialogue.Add(tempevents[i].eventkey, new VamonosChat(tempevents[i].bodytext, tempevents[i].speakername, tempevents[i].spriteindex, tempevents[i].destination));
+                    break;
+                default:
+                    Debug.Log("ERROR: Invalid dialoguetype in json file " + filename + ", at index " + i);
+                    break;
+            }
+        }
+    }
+
+
 
 
     public void StartDialogue()
@@ -117,7 +160,6 @@ public class NPCDialogue : MonoBehaviour {
         }
     }
 
-
     public void changeDialogueEvent(char buttonpressed)
     {
         if (currentDialogueEvent.GetType().ToString() == "GoodbyeChat")
@@ -132,13 +174,4 @@ public class NPCDialogue : MonoBehaviour {
         }
         
     }
-
-
-
-
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 }

@@ -1,7 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Objects of this class store data for dialogue nodes, allowing the use of
+/// a data structure to store "node objects" of different types
+/// </summary>
+[Serializable]
 public abstract class DialogueEvent
 {
     protected string bodyText;

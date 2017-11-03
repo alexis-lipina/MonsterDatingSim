@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This DialogueEvent class allows the display of body text and the "next" button,
+/// and afterwards closes the interface
+/// </summary>
 public class GoodbyeChat : DialogueEvent {
 
-    //just would close  the text is displayed
+    
 
     public GoodbyeChat(string btxt, string nm, int sprref) : base(btxt, nm, sprref)
     {   }
