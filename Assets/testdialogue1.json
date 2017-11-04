@@ -26,8 +26,187 @@
 			"speakername" : "YEET",
 			"bodytext" : "Peace boiiiiiiiiiiiiiiiii",
 			"spriteindex" : 0
-		}
+		},
 
 
+
+
+
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "start",
+			"speakername" : "Narrator",
+			"bodytext" : "You approach what appears to be some crime scene. One of the robots acting as sentry suddenly turns to you and steps in front of you.",
+			"spriteindex" : 0,
+			"nextkey" : "a"
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "a",
+			"speakername" : "Robot",
+			"bodytext" : "HALT! You are in a restricted area! Please stand by while I scan you...",
+			"spriteindex" : 0,
+			"nextkey" : "b"
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "b",
+			"speakername" : "Robot",
+			"bodytext" : "...done. Welcome to the Capital, human. Thevok Security hopes you have a pleasant stay in the safety of our beautiful, peaceful city. Please stand by as I assess your guilt in this terrorist attack.",
+			"spriteindex" : 0,
+			"nextkey" : "c"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "c",
+			"speakername" : "Robot",
+			"bodytext" : "According to my protocol, in order to determine your level of guilt I am required to ask a few questions of you.",
+			"spriteindex" : 0,
+			"buttoncount" : 3,
+			"buttontext" : ["Sure.", "Can *I* ask *YOU* some questions??", "No."],
+			"buttonevent" : [ "ca" , "cb", "cc"]
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "cb",
+			"speakername" : "Robot",
+			"bodytext" : "This unit will be able to render assistance once the interrogation... correction, interview, has been concluded.",
+			"spriteindex" : 0,
+			"nextkey" : "cba"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "cbb",
+			"speakername" : "Robot",
+			"bodytext" : "Repeat. Do you have time for a few questions?",
+			"spriteindex" : 0,
+			"buttoncount" : 2,
+			"buttontext" : ["Sure.", "No."],
+			"buttonevent" : [ "ca" , "cc"]
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "cc",
+			"speakername" : "Robot",
+			"bodytext" : "Warning. Refusal to answer questions will result in a positive determination of guilt, and will lead to arrest or termination.",
+			"spriteindex" : 0,
+			"nextkey" : "cca"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "ccb",
+			"speakername" : "Robot",
+			"bodytext" : "Repeat. Do you have time for a few questions?",
+			"spriteindex" : 0,
+			"buttoncount" : 2,
+			"buttontext" : ["Sure.", "No."],
+			"buttonevent" : [ "ca" , "arrested"]
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "ca",
+			"speakername" : "Robot",
+			"bodytext" : "Excellent. Thank you for complying. Please answer these questions truthfully.",
+			"spriteindex" : 0,
+			"nextkey" : "caa"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "caa",
+			"speakername" : "Robot",
+			"bodytext" : "Question 1 : Are you guilty of committing this terrorist attack?",
+			"spriteindex" : 0,
+			"buttoncount" : 2,
+			"buttontext" : ["Yes.", "No."],
+			"buttonevent" : [ "cab" , "arrested"]
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "cab",
+			"speakername" : "Robot",
+			"bodytext" : "Suspcicious. That's exactly what a guilty party would say... further questioning required.",
+			"spriteindex" : 0,
+			"nextkey" : "cac"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "cac",
+			"speakername" : "Robot",
+			"bodytext" : "Question 2: What activities were you participating approximately 10 minutes ago?",
+			"spriteindex" : 0,
+			"buttoncount" : 3,
+			"buttontext" : ["Walking around the Maker Faire.", "I don't need to tell you that.", "Domestic terrorism."],
+			"buttonevent" : [ "caca" , "cacb", "arrested"]
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "cacb",
+			"speakername" : "Robot",
+			"bodytext" : "Correct, but noncompliance will result in positive determination of guilt.",
+			"spriteindex" : 0,
+			"nextkey" : "cacba"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "cacba",
+			"speakername" : "Robot",
+			"bodytext" : "Repeat. What were you doing 10 minutes ago?",
+			"spriteindex" : 0,
+			"buttoncount" : 3,
+			"buttontext" : ["Walking around the Maker Faire.", "Still not telling.", "Domestic terrorism."],
+			"buttonevent" : [ "caca" , "arrested", "arrested"]
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "caca",
+			"speakername" : "Robot",
+			"bodytext" : "Acknowledged. I have one more question for you.",
+			"spriteindex" : 0,
+			"nextkey" : "cacaa"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "cacaa",
+			"speakername" : "Robot",
+			"bodytext" : "Question 3: Are you a criminal?",
+			"spriteindex" : 0,
+			"buttoncount" : 3,
+			"buttontext" : ["No", "I dont know, I have no understanding of your legal system", "Yes"],
+			"buttonevent" : [ "cacaaa" , "cacaab", "cacaac"]
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "cacaaa",
+			"speakername" : "Robot",
+			"bodytext" : "Acknowledged. Assessment complete.",
+			"spriteindex" : 0,
+			"nextkey" : "cacaaaa"
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "cacaab",
+			"speakername" : "Robot",
+			"bodytext" : "Oh. Yes, understandable.",
+			"spriteindex" : 0,
+			"nextkey" : "cacaaaa"
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "cacaac",
+			"speakername" : "Robot",
+			"bodytext" : "Oh. In that case, I'll have to arrest you for...",
+			"spriteindex" : 0,
+			"nextkey" : "cacaaca"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "cacaaca",
+			"speakername" : "Robot",
+			"bodytext" : "...What criminal activities are you guilty of partaking in?",
+			"spriteindex" : 0,
+			"buttoncount" : 3,
+			"buttontext" : ["I stole a candy bar", "Petty larceny.", "Assorted ones."],
+			"buttonevent" : [ "cacaaa" , "cacaab", "cacaac"]
+		},
 	]
 }
