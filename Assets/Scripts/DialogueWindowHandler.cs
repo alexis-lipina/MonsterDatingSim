@@ -20,9 +20,11 @@ public class DialogueWindowHandler : MonoBehaviour {
     public Text ButtonAText;
     public Text ButtonBText;
     public Text ButtonCText;
+    public Text ButtonDText;
     public Button ButtonA;
     public Button ButtonB;
     public Button ButtonC;
+    public Button ButtonD;
     public Button NextButton;
     public GameObject NPCObject;
     public NPCDialogue NPCScript;
@@ -74,6 +76,10 @@ public class DialogueWindowHandler : MonoBehaviour {
     public void ButtonCPressed()
     {
         PressedButton = 'C';
+    }
+    public void ButtonDPressed()
+    {
+        PressedButton = 'D';
     }
     public void NextButtonPressed()
     {
@@ -129,6 +135,19 @@ public class DialogueWindowHandler : MonoBehaviour {
             ButtonC.enabled = true;
         }
     }
+    public void SetButtonDText(string ButtonText)
+    {
+        // This method changes the text displayed by Button D
+        if (ButtonText.Equals(""))
+        {
+            ButtonD.enabled = false;
+        }
+        else
+        {
+            ButtonDText.text = ButtonText;
+            ButtonD.enabled = true;
+        }
+    }
     public void SetSpeakerText(string text)
     {
         SpeakerName.text = text;
@@ -146,6 +165,10 @@ public class DialogueWindowHandler : MonoBehaviour {
     {
         ButtonC.gameObject.SetActive(true);
     }
+    public void EnableButtonD()
+    {
+        ButtonD.gameObject.SetActive(true);
+    }
     public void EnableButtonNext()
     {
         NextButton.gameObject.SetActive(true);
@@ -162,6 +185,10 @@ public class DialogueWindowHandler : MonoBehaviour {
     public void DisableButtonC()
     {
         ButtonC.gameObject.SetActive(false);
+    }
+    public void DisableButtonD()
+    {
+        ButtonD.gameObject.SetActive(false);
     }
     public void DisableButtonNext()
     {
@@ -202,12 +229,16 @@ public class DialogueWindowHandler : MonoBehaviour {
                     NPCScript.changeDialogueEvent(PressedButton);
                     PressedButton = ' ';
                     break;
+                case 'D':
+                    Debug.Log("Button D pressed");
+                    NPCScript.changeDialogueEvent(PressedButton);
+                    PressedButton = ' ';
+                    break;
                 case 'N':
                     Debug.Log("Next Button Pressed");
                     NPCScript.changeDialogueEvent(PressedButton);
                     PressedButton = ' ';
                     break;
-
                 default:
                     break;
             }

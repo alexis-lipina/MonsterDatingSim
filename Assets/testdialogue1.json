@@ -5,36 +5,6 @@
 		{
 			"dialoguetype" : "MonologueChat",
 			"eventkey" : "start",
-			"speakername" : "YEET",
-			"bodytext" : "If you can read this, the JSON has successfully been loaded in! Congrats!",
-			"spriteindex" : 0,
-			"nextkey" : "middle"
-		},
-		{
-			"dialoguetype" : "NormalChat",
-			"eventkey" : "middle",
-			"speakername" : "YEET",
-			"bodytext" : "Whatchu wanna do now B?",
-			"spriteindex" : 0,
-			"buttoncount" : 3,
-			"buttontext" : ["what?", "uhhh", "I wanna leave fam"],
-			"buttonevent" : [ "middle" , "exit", "exit"]
-		},
-		{
-			"dialoguetype" : "GoodbyeChat",
-			"eventkey" : "exit",
-			"speakername" : "YEET",
-			"bodytext" : "Peace boiiiiiiiiiiiiiiiii",
-			"spriteindex" : 0
-		},
-
-
-
-
-
-		{
-			"dialoguetype" : "MonologueChat",
-			"eventkey" : "start",
 			"speakername" : "Narrator",
 			"bodytext" : "You approach what appears to be some crime scene. One of the robots acting as sentry suddenly turns to you and steps in front of you.",
 			"spriteindex" : 0,
@@ -62,9 +32,9 @@
 			"speakername" : "Robot",
 			"bodytext" : "According to my protocol, in order to determine your level of guilt I am required to ask a few questions of you.",
 			"spriteindex" : 0,
-			"buttoncount" : 3,
-			"buttontext" : ["Sure.", "Can *I* ask *YOU* some questions??", "No."],
-			"buttonevent" : [ "ca" , "cb", "cc"]
+			"buttoncount" : 4,
+			"buttontext" : ["Sure.", "Can *I* ask *YOU* some questions??", "No.", "WOO!"],
+			"buttonevent" : [ "ca" , "cb", "cc", "cc"]
 		},
 		{
 			"dialoguetype" : "MonologueChat",
@@ -76,7 +46,7 @@
 		},
 		{
 			"dialoguetype" : "NormalChat",
-			"eventkey" : "cbb",
+			"eventkey" : "cba",
 			"speakername" : "Robot",
 			"bodytext" : "Repeat. Do you have time for a few questions?",
 			"spriteindex" : 0,
@@ -94,7 +64,7 @@
 		},
 		{
 			"dialoguetype" : "NormalChat",
-			"eventkey" : "ccb",
+			"eventkey" : "cca",
 			"speakername" : "Robot",
 			"bodytext" : "Repeat. Do you have time for a few questions?",
 			"spriteindex" : 0,
@@ -118,7 +88,7 @@
 			"spriteindex" : 0,
 			"buttoncount" : 2,
 			"buttontext" : ["Yes.", "No."],
-			"buttonevent" : [ "cab" , "arrested"]
+			"buttonevent" : [ "arrested" , "cab"]
 		},
 		{
 			"dialoguetype" : "MonologueChat",
@@ -180,7 +150,7 @@
 			"speakername" : "Robot",
 			"bodytext" : "Acknowledged. Assessment complete.",
 			"spriteindex" : 0,
-			"nextkey" : "cacaaaa"
+			"nextkey" : "notguilty"
 		},
 		{
 			"dialoguetype" : "MonologueChat",
@@ -188,7 +158,7 @@
 			"speakername" : "Robot",
 			"bodytext" : "Oh. Yes, understandable.",
 			"spriteindex" : 0,
-			"nextkey" : "cacaaaa"
+			"nextkey" : "cacaaa"
 		},
 		{
 			"dialoguetype" : "MonologueChat",
@@ -205,8 +175,110 @@
 			"bodytext" : "...What criminal activities are you guilty of partaking in?",
 			"spriteindex" : 0,
 			"buttoncount" : 3,
-			"buttontext" : ["I stole a candy bar", "Petty larceny.", "Assorted ones."],
-			"buttonevent" : [ "cacaaa" , "cacaab", "cacaac"]
+			"buttontext" : ["I was late to class, like, three times this year.", "Domestic terrorism", "Uh... assorted ones."],
+			"buttonevent" : [ "cacaacaa" , "arrested", "cacaacac"]
 		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "cacaacaa",
+			"speakername" : "Robot",
+			"bodytext" : "...Perhaps that is a crime on your home planet, but it is not a criminal offense here.",
+			"spriteindex" : 0,
+			"nextkey" : "notguilty"
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "cacaacac",
+			"speakername" : "Robot",
+			"bodytext" : "Assorted criminal activities.",
+			"spriteindex" : 0,
+			"nextkey" : "cacaacaca"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "cacaacaca",
+			"speakername" : "Robot",
+			"bodytext" : "You aren't taking this very seriously, are you?",
+			"spriteindex" : 0,
+			"buttoncount" : 1,
+			"buttontext" : ["No."],
+			"buttonevent" : [ "irritated"]
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "irritated",
+			"speakername" : "Robot",
+			"bodytext" : "Protocol dictates you are taken for interrogation at the nearest police station.",
+			"spriteindex" : 0,
+			"nextkey" : "gotostation"
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "notguilty",
+			"speakername" : "Robot",
+			"bodytext" : "This unit has determined that you are most likely not guilty of engaging in criminal activity. Thevok Security encourages you continue with your good behavior.",
+			"spriteindex" : 0,
+			"nextkey" : "i"
+		},
+		
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "i",
+			"speakername" : "Robot",
+			"bodytext" : "This unit is now able to render assistance to you, should you need any guidance in navigating our scenic city.",
+			"spriteindex" : 0,
+			"nextkey" : "help"
+		},
+
+
+
+
+
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "help",
+			"speakername" : "Robot",
+			"bodytext" : "How can this unit assist you?",
+			"spriteindex" : 0,
+			"buttoncount" : 4,
+			"buttontext" : ["I should go.", "What happened here?", "I've got some questions about the world.", "I've got some questions about you."],
+			"buttonevent" : [ "goodexit", "whathappened", "world", "robot"]
+		},
+		{
+			"dialoguetype" : "GoodbyeChat",
+			"eventkey" : "goodexit",
+			"speakername" : "Robot",
+			"bodytext" : "This unit will be here should you need any assistance. Have a pleasant stay in the safety of our city.",
+			"spriteindex" : 0
+		},
+		{
+			"dialoguetype" : "MonologueChat",
+			"eventkey" : "whathappened",
+			"speakername" : "whathappened",
+			"bodytext" : "Assessment : Thus far, evidence suggests this was a terrorist bombing, committed by terrorists in an act of terrorism. Thankfully... it seems no lives were lost.",
+			"spriteindex" : 0,
+			"nextkey" : "help"
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "world",
+			"speakername" : "Robot",
+			"bodytext" : "What would you like to know about the world?",
+			"spriteindex" : 0,
+			"buttoncount" : 4,
+			"buttontext" : ["I should go.", "What happened here?", "I've got some questions about the world.", "I've got some questions about you."],
+			"buttonevent" : [ "goodexit", "whathappened", "world", "robot"]
+		},
+		{
+			"dialoguetype" : "NormalChat",
+			"eventkey" : "robot",
+			"speakername" : "Robot",
+			"bodytext" : "What questions about this unit do you have?",
+			"spriteindex" : 0,
+			"buttoncount" : 4,
+			"buttontext" : ["Are you in a relationship?", "What's your name?", "What are you?", "I'd like to ask something else."],
+			"buttonevent" : [ "relationship", "name", "you", "help"]
+		}
+
 	]
 }

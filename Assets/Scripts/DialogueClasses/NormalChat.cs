@@ -44,6 +44,8 @@ public class NormalChat : DialogueEvent
                 return buttonText[1];
             case 'C':
                 return buttonText[2];
+            case 'D':
+                return buttonText[3];
             default:
                 Debug.LogError("ERROR: getButtonText called with improper (" + btn + ") argument");
                 return "";
@@ -64,6 +66,8 @@ public class NormalChat : DialogueEvent
                 return buttonEvent[1];
             case 'C':
                 return buttonEvent[2];
+            case 'D':
+                return buttonEvent[3];
             default:
                 Debug.LogError("ERROR: getButtonEvent called with improper (" + btn + ") argument");
                 return "";
