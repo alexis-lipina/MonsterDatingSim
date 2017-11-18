@@ -823,8 +823,9 @@ MonoBehaviour:
   ButtonC: {fileID: 1888720604}
   ButtonD: {fileID: 1023831476}
   NextButton: {fileID: 1627615817}
+  NPCPortrait: {fileID: 1099835193}
   NPCObject: {fileID: 772279808}
-  NPCScript: {fileID: 0}
+  NPCScript: {fileID: 1154945613}
   DialoguePanel: {fileID: 462646934}
   PressedButton: 0
 --- !u!114 &462646937
@@ -1682,7 +1683,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2002184412}
-        m_MethodName: OptionsButton
+        m_MethodName: MainMenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1748,6 +1749,12 @@ MonoBehaviour:
   ButtonC: {fileID: 795324536}
   ButtonD: {fileID: 1344334750}
   handler: {fileID: 462646936}
+  npcsprites:
+  - {fileID: 21300000, guid: 6cbe8abdfe7e9e345b071b1d2c8d5907, type: 3}
+  - {fileID: 21300000, guid: b50dcce0bdaaf5f438ed1ef0bba5714a, type: 3}
+  - {fileID: 21300000, guid: 5a2d5e0b8eb89ec4493c6a834a659b4f, type: 3}
+  - {fileID: 21300000, guid: c4a5b2052fd42b54c8e967b5c3d83bdd, type: 3}
+  - {fileID: 21300000, guid: a86736f29477d0d498488065e6c48fb1, type: 3}
 --- !u!1 &1244967514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,7 +1896,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The Galacticapital
+  m_Text: 'Im sorry for this mess of a game
+
+'
 --- !u!222 &1248804518
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1919,8 +1928,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1321055583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.858, y: 14.107, z: 0}
+  m_LocalScale: {x: 2.9544985, y: 2.8686912, z: 1}
   m_Children: []
   m_Father: {fileID: 15002630}
   m_RootOrder: 1
@@ -1957,7 +1966,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e85dd424dc3af6499133fa1a99e3bd4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1965,7 +1974,7 @@ SpriteRenderer:
   m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &1344334748
 GameObject:
@@ -2187,8 +2196,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1356040679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.4, y: 12.51, z: 0}
+  m_LocalScale: {x: 2.9791083, y: 2.979107, z: 2.979107}
   m_Children: []
   m_Father: {fileID: 209534314}
   m_RootOrder: 0
@@ -2916,7 +2925,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e85dd424dc3af6499133fa1a99e3bd4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2924,7 +2933,7 @@ SpriteRenderer:
   m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &1736622980
 GameObject:
@@ -3151,8 +3160,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1767713253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.11, y: 14.65, z: 0}
+  m_LocalScale: {x: 3.1645527, y: 3.1645513, z: 3.1645513}
   m_Children: []
   m_Father: {fileID: 15002630}
   m_RootOrder: 0
@@ -3559,8 +3568,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1937927787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1154945612}
   m_RootOrder: 1
@@ -3711,8 +3720,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013571643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.22, y: 8.81, z: 0}
+  m_LocalScale: {x: 1, y: 1.3625004, z: 1}
   m_Children: []
   m_Father: {fileID: 209534314}
   m_RootOrder: 1
@@ -3749,7 +3758,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e85dd424dc3af6499133fa1a99e3bd4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3757,7 +3766,7 @@ SpriteRenderer:
   m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &2051520435
 GameObject:
@@ -3934,12 +3943,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb7d8266ef4f5154bb6d69fb58796234, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f70eeb4e42bceae4f86e932e2e13f590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 38.4, y: 21.6}
+  m_Size: {x: 76.8, y: 43.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3952,7 +3961,7 @@ Transform:
   m_GameObject: {fileID: 2058830613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4

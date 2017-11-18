@@ -159,6 +159,7 @@ public class DialogueWindowHandler : MonoBehaviour {
         npcsprites = new List<Sprite>();
         for (int i = 0; i < sprites.Length; i++)
         {
+            Debug.Log("Saving sprite " + i);
             npcsprites.Add(sprites[i]);
         }
     }
@@ -168,6 +169,7 @@ public class DialogueWindowHandler : MonoBehaviour {
         {
             //change sprite
             NPCPortrait.GetComponent<Image>().sprite = npcsprites[idx];
+            Debug.Log("Printing sprite " + idx);
         }
         else
         {

@@ -58,7 +58,7 @@ public class NPCDialogue : MonoBehaviour {
   
     private void loadDialogueFromJSON(string filename)
     {
-        StreamReader filestream = new StreamReader(Application.dataPath + "/" + filename);
+        StreamReader filestream = new StreamReader(Application.streamingAssetsPath + "/" + filename);
         JSONDialogueCollection dialoguearray = JsonUtility.FromJson<JSONDialogueCollection>(filestream.ReadToEnd());
         filestream.Close();
 
@@ -101,6 +101,7 @@ public class NPCDialogue : MonoBehaviour {
     { 
         if (npcDialogue.ContainsKey("start"))
         {
+            handler.SetNPCSpriteSheet(npcsprites);
             currentDialogueEvent = npcDialogue["start"];
             printDialogue();
             handler.openDialogue("TestNPC");
@@ -118,10 +119,11 @@ public class NPCDialogue : MonoBehaviour {
          * */
 
         //DEBUG
-        print("Printing object type...");
-        print(currentDialogueEvent.GetType().ToString());
-        print("...Done!");
+        //print("Printing object type...");
+        //print(currentDialogueEvent.GetType().ToString());
+        //print("...Done!");
 
+        handler.SetNPCSpriteIndex(currentDialogueEvent.getSpriteReference());
         switch (currentDialogueEvent.GetType().ToString())
         {
             case "NormalChat":
@@ -134,6 +136,7 @@ public class NPCDialogue : MonoBehaviour {
                     case (1):
                         handler.EnableButtonA();
                         handler.SetButtonAText(currentDialogueEvent.getButtonText('A'));
+                        
                         break;
                     case (2):
                         handler.EnableButtonA();

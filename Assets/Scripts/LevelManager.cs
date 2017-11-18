@@ -24,6 +24,10 @@ public class LevelManager : MonoBehaviour {
     {   ///quits the game, probably will be useful to use this if I want to quit a specific way every time
         Application.Quit();
     }
+    public void buttonQuitGame()
+    {
+        QuitGame();
+    }
 
 
 }
