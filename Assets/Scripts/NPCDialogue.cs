@@ -27,6 +27,7 @@ public class NPCDialogue : MonoBehaviour {
     public DialogueWindowHandler handler;
     Dictionary<string, DialogueEvent> npcDialogue = new Dictionary<string, DialogueEvent>();
     DialogueEvent currentDialogueEvent;
+    public Sprite[] npcsprites;
 
 
     void Start()

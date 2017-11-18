@@ -26,6 +26,7 @@ public class DialogueWindowHandler : MonoBehaviour {
     public Button ButtonC;
     public Button ButtonD;
     public Button NextButton;
+    public GameObject NPCPortrait;
     public GameObject NPCObject;
     public NPCDialogue NPCScript;
     public GameObject DialoguePanel;
@@ -34,6 +35,7 @@ public class DialogueWindowHandler : MonoBehaviour {
     private string BodyText;
     private bool ready;
     private int BodyIndex;
+    private List<Sprite> npcsprites;
 
 
     //Open and close dialogue
@@ -151,6 +153,26 @@ public class DialogueWindowHandler : MonoBehaviour {
     public void SetSpeakerText(string text)
     {
         SpeakerName.text = text;
+    }
+    public void SetNPCSpriteSheet(Sprite[] sprites)
+    {
+        npcsprites = new List<Sprite>();
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            npcsprites.Add(sprites[i]);
+        }
+    }
+    public void SetNPCSpriteIndex(int idx)
+    {
+        if (idx < npcsprites.Count)
+        {
+            //change sprite
+            NPCPortrait.GetComponent<Image>().sprite = npcsprites[idx];
+        }
+        else
+        {
+            Debug.LogError("ERROR: Sprite Index Out Of Range! Index:" + idx + " Size:" + npcsprites.Count);
+        }
     }
 
     public void EnableButtonA()
