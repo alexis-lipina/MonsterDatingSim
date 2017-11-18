@@ -1746,7 +1746,7 @@ MonoBehaviour:
   ButtonA: {fileID: 1396616145}
   ButtonB: {fileID: 1244967516}
   ButtonC: {fileID: 795324536}
-  ButtonD: {fileID: 0}
+  ButtonD: {fileID: 1344334750}
   handler: {fileID: 462646936}
 --- !u!1 &1244967514
 GameObject:
@@ -3560,7 +3560,7 @@ Transform:
   m_GameObject: {fileID: 1937927787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1154945612}
   m_RootOrder: 1
@@ -3597,12 +3597,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1da07890f64772c41813087ab0f4269a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 573fc97dd8e9c4347a27dea8106a6943, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.5, y: 30.000002}
+  m_Size: {x: 50.999996, y: 51.999996}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
